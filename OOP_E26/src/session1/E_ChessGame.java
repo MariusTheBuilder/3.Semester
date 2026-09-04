@@ -31,29 +31,32 @@ public class E_ChessGame {
 
     public static void main(String[] args) {
         char[][] board = setupBoard();
+        int[][] moveCounts = new int[8][8];
         printBoard(board);
 
         // --- A short scripted game --------------------------------------
         // Coordinates are (row, col): see the numbers around the board.
 
-        movePiece(board, 7, 3, 4, 3);   // White queen straight up: legal
-        movePiece(board, 0, 0, 2, 2);   // Black rook diagonally: illegal
-        movePiece(board, 7, 0, 7, 2);   // White rook onto its own bishop: illegal
-        movePiece(board, 4, 3, 0, 3);   // The white queen captures the black queen!
-        movePiece(board, 0, 4, 0, 3);   // ...and the black king takes revenge.
-        movePiece(board, 7, 5, 5, 3);   // White bishop: should be legal... but see EXERCISES.md
+        /*
+        movePiece(board, moveCounts,7, 3, 4, 3);   // White queen straight up: legal
+        movePiece(board, moveCounts,0, 0, 2, 2);   // Black rook diagonally: illegal
+        movePiece(board, moveCounts,7, 0, 7, 2);   // White rook onto its own bishop: illegal
+        movePiece(board, moveCounts,4, 3, 0, 3);   // The white queen captures the black queen!
+        movePiece(board, moveCounts,0, 4, 0, 3);   // ...and the black king takes revenge.
+        movePiece(board, moveCounts,7, 5, 5, 3);   // White bishop: should be legal... but see EXERCISES.md
 
         printBoard(board);
+        */
 
         // --- EXERCISE 4: the sabotage -----------------------------------
         // Uncomment the two lines below and run again. A second white queen
         // appears out of thin air in the middle of the board. No rule stopped
         // us: the board is just an array, and ANY code can write ANY square.
-        //
+
         // board[4][4] = 'Q';
         // printBoard(board);
 
-        play(board);
+        play(board, moveCounts);
     }
 
     /** Creates the initial position of our mini-chess (no pawns, no knights). */
@@ -68,18 +71,22 @@ public class E_ChessGame {
 
         // Black pieces (lowercase), top of the board.
         board[0][0] = 'r';
+        board[0][1] = 'n';
         board[0][2] = 'b';
         board[0][3] = 'q';
         board[0][4] = 'k';
         board[0][5] = 'b';
+        board[0][6] = 'n';
         board[0][7] = 'r';
 
         // White pieces (uppercase), bottom of the board.
         board[7][0] = 'R';
+        board[7][1] = 'N';
         board[7][2] = 'B';
         board[7][3] = 'Q';
         board[7][4] = 'K';
         board[7][5] = 'B';
+        board[7][6] = 'N';
         board[7][7] = 'R';
 
         return board;
@@ -99,7 +106,7 @@ public class E_ChessGame {
         }
         System.out.println("      +-----------------+");
         System.out.println("      UPPERCASE = White, lowercase = black");
-        System.out.println("      K king, Q queen, R rook, B bishop, . empty square");
+        System.out.println("      K king, Q queen, R rook, B bishop, N Knight, P pawn, . empty square");
     }
 
     /** Is this piece White? (White pieces are the uppercase letters.) */
@@ -133,6 +140,12 @@ public class E_ChessGame {
                 return "Queen";
             case 'R':
                 return "Rook";
+            case 'B':
+                return "Bishop";
+            case 'N':
+                return "Knight";
+            case 'P':
+                return "Pawn";
             default:
                 return "?";
         }
@@ -176,6 +189,13 @@ public class E_ChessGame {
             case 'R':
                 return isLegalHorizontalMove(board, fromRow, fromCol, toRow, toCol, 7)
                         || isLegalVerticalMove(board, fromRow, fromCol, toRow, toCol, 7);
+            case 'B':
+                return isLegalDiagonalMove(board, fromRow, fromCol, toRow, toCol, 7);
+            case 'N':
+                int rowDistance = Math.abs(toRow - fromRow);
+                int colDistance = Math.abs(toCol - fromCol);
+                return (rowDistance == 2 && colDistance == 1)
+                        || (rowDistance == 1 && colDistance == 2);
             default:
                 // A piece nobody taught this program to move. (Bishops... Exercise 1!)
                 return false;
@@ -276,7 +296,7 @@ public class E_ChessGame {
      * enemy piece on the target square is captured). Prints what happened
      * and returns whether the move was made.
      */
-    static boolean movePiece(char[][] board, int fromRow, int fromCol, int toRow, int toCol) {
+    static boolean movePiece(char[][] board, int[][] moveCounts, int fromRow, int fromCol, int toRow, int toCol) {
         if (!isLegalMove(board, fromRow, fromCol, toRow, toCol)) {
             System.out.println("Illegal move: (" + fromRow + "," + fromCol + ") -> (" + toRow + "," + toCol
                     + "): not how that piece moves, the path is blocked, or the target is your own piece");
@@ -295,6 +315,12 @@ public class E_ChessGame {
 
         board[toRow][toCol] = piece;
         board[fromRow][fromCol] = '.';
+        moveCounts[fromRow][fromCol]++;
+        moveCounts[toRow][toCol] = moveCounts[fromRow][fromCol];
+        moveCounts[fromRow][fromCol] = 0;
+
+        System.out.println(colorName(piece) + " " + pieceName(piece)
+                + " has now moved " + moveCounts[toRow][toCol] + " times");
         return true;
     }
 
@@ -303,7 +329,7 @@ public class E_ChessGame {
      * numbers separated by spaces: fromRow fromCol toRow toCol
      * (for example: 7 3 4 3). Enter -1 to quit.
      */
-    static void play(char[][] board) {
+    static void play(char[][] board, int[][] moveCounts) {
         Scanner scanner = new Scanner(System.in);
         boolean whiteToMove = true;
 
@@ -335,7 +361,7 @@ public class E_ChessGame {
                 System.out.println("There is no piece on (" + fromRow + "," + fromCol + ")");
             } else if (isWhite(board[fromRow][fromCol]) != whiteToMove) {
                 System.out.println("That piece is not yours!");
-            } else if (movePiece(board, fromRow, fromCol, toRow, toCol)) {
+            } else if (movePiece(board, moveCounts, fromRow, fromCol, toRow, toCol)) {
                 whiteToMove = !whiteToMove;   // the move was made: other player's turn
             }
         }
