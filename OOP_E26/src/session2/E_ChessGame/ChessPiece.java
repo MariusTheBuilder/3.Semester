@@ -20,10 +20,11 @@ package session2.E_ChessGame;
  */
 public class ChessPiece {
 
-    private String type;    // "King", "Queen", "Rook" or "Bishop"
+    private String type;    // "King", "Queen", "Rook", "Bishop", "Knight" or "Pawn"
     private String color;   // "White" or "Black"
     private int row = -1;   // (-1,-1) until a board places the piece — as in step D
     private int col = -1;
+    private int moveCount = 0;
 
     /** Step D's constructor, unchanged: what the piece is, not where. */
     public ChessPiece(String type, String color) {
@@ -52,6 +53,10 @@ public class ChessPiece {
                 return "Rook";
             case 'B':
                 return "Bishop";
+            case 'N':
+                return "Knight";
+            case 'P':
+                return "Pawn";
             default:
                 return "?";
         }
@@ -86,6 +91,8 @@ public class ChessPiece {
         return color.equals("White");
     }
 
+    public int getMoveCount() { return moveCount; }
+
     /**
      * The char for printing the board: session 1's letters, computed from
      * type and color instead of stored. The piece stores ONE representation
@@ -105,6 +112,12 @@ public class ChessPiece {
                 break;
             case "Bishop":
                 symbol = 'B';
+                break;
+            case "Knight":
+                symbol = 'N';
+                break;
+            case "Pawn":
+                symbol = 'P';
                 break;
             default:
                 symbol = '?';
@@ -139,6 +152,13 @@ public class ChessPiece {
             case "Rook":
                 return Movements.isLegalHorizontalMove(board, row, col, toRow, toCol, 7)
                         || Movements.isLegalVerticalMove(board, row, col, toRow, toCol, 7);
+            case "Bishop":
+                return Movements.isLegalDiagonalMove(board, row, col, toRow, toCol, 7);
+            case "Knight":
+                int rowDistance = Math.abs(toRow - row);
+                int colDistance = Math.abs(toCol - col);
+                return (rowDistance == 2 && colDistance == 1)
+                        || (rowDistance == 1 && colDistance == 2);
             default:
                 // A piece nobody taught to move. The bishops, again — and
                 // again nothing warned us. EXERCISES.md, exercise 1.
@@ -156,4 +176,6 @@ public class ChessPiece {
     protected void setCol(int col) {
         this.col = col;
     }
+
+    public void incrementMoveCount() { moveCount++; }
 }

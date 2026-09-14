@@ -77,19 +77,29 @@ public class ChessGame {
 
         // Black pieces (lowercase), top of the board.
         board.placePiece(0, 0, new ChessPiece('r'));
+        board.placePiece(0, 1, new ChessPiece('n'));
         board.placePiece(0, 2, new ChessPiece('b'));
         board.placePiece(0, 3, new ChessPiece('q'));
         board.placePiece(0, 4, new ChessPiece('k'));
         board.placePiece(0, 5, new ChessPiece('b'));
+        board.placePiece(0, 6, new ChessPiece('n'));
         board.placePiece(0, 7, new ChessPiece('r'));
+      //  for (int col = 0; col < 8; col++) {
+           // board.placePiece(1, col, new ChessPiece('p'));
+      //  }
 
         // White pieces (uppercase), bottom of the board.
         board.placePiece(7, 0, new ChessPiece('R'));
+        board.placePiece(7, 1, new ChessPiece('N'));
         board.placePiece(7, 2, new ChessPiece('B'));
         board.placePiece(7, 3, new ChessPiece('Q'));
         board.placePiece(7, 4, new ChessPiece('K'));
         board.placePiece(7, 5, new ChessPiece('B'));
+        board.placePiece(7, 6, new ChessPiece('N'));
         board.placePiece(7, 7, new ChessPiece('R'));
+        //for (int col = 0; col < 8; col++) {
+           // board.placePiece(6, col, new ChessPiece('P'));
+      //  }
     }
 
     /** Shows the board. The game asks; the board knows how to draw itself. */
@@ -128,6 +138,8 @@ public class ChessGame {
             System.out.println(piece.getColor() + " " + piece.getType()
                     + " moves (" + fromRow + "," + fromCol + ") -> (" + toRow + "," + toCol + ")");
         }
+        System.out.println(piece.getColor() + " " + piece.getType()
+                + " has now moved " + piece.getMoveCount() + " times");
         return true;
     }
 

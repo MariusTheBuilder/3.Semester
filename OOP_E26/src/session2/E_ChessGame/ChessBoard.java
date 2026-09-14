@@ -94,6 +94,7 @@ public class ChessBoard {
                                         // on the board — the array forgets it
         piece.setRow(toRow);
         piece.setCol(toCol);
+        piece.incrementMoveCount();
         return true;
     }
 
@@ -126,6 +127,6 @@ public class ChessBoard {
         }
         System.out.println("      +-----------------+");
         System.out.println("      UPPERCASE = White, lowercase = black");
-        System.out.println("      K king, Q queen, R rook, B bishop, . empty square");
+        System.out.println("      K king, Q queen, R rook, B bishop, N knight, P pawn, . empty square");
     }
 }
