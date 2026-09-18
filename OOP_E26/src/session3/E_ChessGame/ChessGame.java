@@ -54,15 +54,29 @@ public class ChessGame {
 
         // Black pieces, top of the board.
         board.placePiece(0, 0, new Rook("Black"));
+        board.placePiece(0, 1, new Knight("Black"));
+        board.placePiece(0, 2, new Bishop("Black"));
         board.placePiece(0, 3, new Queen("Black"));
         board.placePiece(0, 4, new King("Black"));
+        board.placePiece(0, 5, new Bishop("Black"));
+        board.placePiece(0, 6, new Knight("Black"));
         board.placePiece(0, 7, new Rook("Black"));
 
         // White pieces, bottom of the board.
         board.placePiece(7, 0, new Rook("White"));
+        board.placePiece(7, 1, new Knight("White"));
+        board.placePiece(7, 2, new Bishop("White"));
         board.placePiece(7, 3, new Queen("White"));
         board.placePiece(7, 4, new King("White"));
+        board.placePiece(7, 5, new Bishop("White"));
+        board.placePiece(7, 6, new Knight("White"));
         board.placePiece(7, 7, new Rook("White"));
+
+        // Amazons.
+        // board.placePiece(1, 1, new Amazon("Black"));
+        // board.placePiece(1, 6, new Amazon("Black"));
+        // board.placePiece(6, 1, new Amazon("White"));
+        // board.placePiece(6, 6, new Amazon("White"));
     }
 
     /** Shows the board. The game asks; the board knows how to draw itself. */
