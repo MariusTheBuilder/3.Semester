@@ -1,0 +1,63 @@
+Problem 1.
+Write a class to represent a two dimensional point (i.e. an
+(x, y) coordinate). Write a subclass to represent a three dimensional point.
+Write a subclass to represent a three dimensional colored point.
+
+Problem 2.
+Write a class Color to represent a color. A color is an intensity
+from 0 to 255 of each of the three components, red, green and blue, and
+Color has a method that returns each of them. Write subclasses for red,
+green, blue, black, white, gray and cyan. Each subclass has a constructor
+with no arguments that passes its own three intensities up with super. Add a
+method Color.describe that returns the three values as text, and check that
+every subclass has it without writing it again. Then answer two questions in
+writing. Should Color be abstract? And what does a subclass of it inherit
+that you did not have to write?
+
+Problem 3.
+Write an abstract class Shape with three abstract methods,
+Shape.area, Shape.circumference and Shape.edges. Write a subclass for
+each of these shapes: square, rectangle, triangle, circle and line. Then do
+three things. Try to write new Shape() and copy the error the compiler gives
+you. Put five shapes of different kinds in a Shape[] and print the total area
+with one loop, which never asks what kind of shape it is holding. And decide
+what Line.area returns, since a line has no area, and write down why you
+chose that.
+
+Problem 4.
+Write a class to represent a person. A person has a name
+and an age. Write a subclass to represent an employee. An employee has a
+1
+job title and a salary. Write a subclass to represent a manager. A manager
+has bonus which is added on top of his or her base salary. Add appropriate
+constructors for each class. Write a method Employee.pay that returns what
+the employee is paid, and override it in the manager so that it adds the bonus,
+with @Override above it.
+
+Problem 5.
+Write a class to represent a parking meter. The parking meter
+should have a method to insert coins and pay for x minutes. The parking rate
+depends on whether it is weekday or weekend. Write an abstract class Rate
+with one abstract method, Rate.costFor, which takes a number of minutes
+and returns what it costs. Write two subclasses of Rate, one for weekdays
+and one for weekends. The parking meter holds a Rate and asks it, so the
+meter has no idea which of the two it is holding. Then write down what you
+would have to change to add a holiday rate.
+
+Problem 6.
+Write an abstract class Entry to represent an entry in a file
+system. Every entry has a name, a creation date and a size, and Entry.size
+is abstract. Write two subclasses, one for a regular file and one for a directory.
+A regular file knows its own size. A directory holds other entries, regular files
+or directories, and its size is the sum of theirs. Add a method that returns
+the oldest regular file of a directory and one that returns the newest.
+
+Problem 7.
+Write a class Truck with a maker, a model, a year and a
+number of wheels. Write a class Kitchen with methods that make various
+types of pizzas. Now write a class PizzaTruck which is both a truck and a
+kitchen1
+. Java lets a class extend one class and no more, so try it and see
+what you have to give up. Write down which of the two you chose as the
+superclass, what you did with the other one, and what it cost you. Session
+4 is about the tool that solves this.
