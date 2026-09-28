@@ -1,4 +1,4 @@
-package intro_assignment_s3;
+package intro_assignment_s3.Color;
 
 public class Color {
     int red = 0;
