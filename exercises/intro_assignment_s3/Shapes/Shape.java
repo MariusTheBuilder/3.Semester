@@ -5,3 +5,4 @@ public abstract class Shape {
     public abstract double circumference();
     public abstract int edges();
 }
+

@@ -1,4 +1,5 @@
 package intro_assignment_s3.ParkingMeter;
 
-public class Rate {
+public abstract class Rate {
+    public abstract double costFor(int minutes);
 }
