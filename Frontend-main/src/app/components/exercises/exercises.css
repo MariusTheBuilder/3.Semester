@@ -1,0 +1,54 @@
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+pre {
+  margin: 0;
+}
+
+.method {
+  font-weight: bold;
+  color: #1a7f37;
+}
+
+.method.post {
+  color: #9a6700;
+}
+
+
+details summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+details h3 {
+  margin: 12px 0 4px;
+  font-size: 1em;
+}
+
+.details-cell {
+  padding-bottom: 24px;
+}
+
+.input {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.input input {
+  margin-left: 4px;
+}

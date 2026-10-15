@@ -1,0 +1,34 @@
+<h1>Demo</h1>
+
+<div class="actions">
+  <button class="btn" (click)="send()">Send</button>
+  <button class="btn" (click)="refresh()">Refresh</button>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Endpoint</th>
+      <th>Input</th>
+      <th>Response</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (request of requests; track request.path) {
+      <tr>
+        <td><span class="method" [class.post]="request.method === 'POST'">{{ request.method }}</span></td>
+        <td><code>{{ request.path }}</code></td>
+        <td>
+          @for (input of request.inputs; track input.label) {
+            <label class="input">
+              {{ input.label }}
+              <input [type]="input.type" [name]="request.path + input.label" [(ngModel)]="input.value">
+            </label>
+          }
+        </td>
+        <td><pre>{{ request.response }}</pre></td>
+      </tr>
+    }
+  </tbody>
+</table>
