@@ -1,0 +1,46 @@
+Problem 1. Explain, in your own words, the differences and similarities of
+interfaces, abstract classes, and classes.
+
+
+Problem 2. Explain, in your own words, the concept of inheritance.
+
+
+Problem 3. Answer the following questions:
+• Can an interface inherit from an interface? from multiple interfaces?
+from a class?
+• Can a class inherit from an interface? from multiple interfaces?
+• Can a class inherit from a class? from multiple classes?
+
+
+Problem 4. Implement an object-oriented design of a vending machine,
+considering the following requirements.
+• A vending machine sells a number of products.
+– A product has a name and a price.
+– A product has a unique slot in the vending machine.
+– There is a number of items for each product in the vending machine (e.g. we can have 5 units of the product “chocolate” in our
+vending machine).
+– A product may be stocked or sold out.
+• We can have perishable and non-perishable products.
+– Each perishable product has an expiration date.
+1
+– Each non-perishable product has a “best-before” date.
+• Some of the products are sold in plastic bottles (e.g. sodas) and should
+specify the number of millilitres they contain.
+– They should have this method:
+int getNumberOfMillilitres().
+
+
+Problem 5. Implement an object-oriented design of a smart fridge. This
+exercise is intended to be open-ended. Use your imagination! Here are some
+questions to get started:
+• What items does a fridge contain?
+• What categories can these items be grouped into?
+• What kind of information is associated with these items?
+• What operations can you perform on a fridge?
+• What can go wrong and what can go right during fridge operation?
+• What helpful features could you imagine from a “smart” fridge?
+• A fridge is not just a fridge. What are some fancy features supported
+by fridges?
+Try to come up with a meaningful design. I expect several interfaces or
+abstract-classes.
+Hint: If you ever get stuck, just go to your fridge, and look inside.
