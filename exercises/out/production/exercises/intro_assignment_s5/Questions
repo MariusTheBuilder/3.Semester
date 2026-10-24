@@ -1,5 +1,30 @@
 Problem 3. Answer the following questions:
-• Can an interface inherit from an interface? from multiple interfaces?
-from a class?
+• Can an interface inherit from an interface? from multiple interfaces? from a class?
 • Can a class inherit from an interface? from multiple interfaces?
 • Can a class inherit from a class? from multiple classes?
+
+______________________________________________________________________________________
+Interface from an interface? Yes, with extends.
+From multiple interfaces?    Yes, interface C extends A, B is allowed.
+From a class?                No. An interface can’t extend a class.
+
+
+Class from an interface?     Yes, but the keyword is implements, not extends.
+                             The class must provide bodies for all the interface’s abstract methods
+                             (unless the class is abstract).
+From multiple interfaces?    Yes, class HybridCar implements Refuelable, Chargeable.
+
+
+Class from a class?          Yes, with extends.
+From multiple classes?       No. Java has single inheritance for classes.
+
+______________________________________________________________________________________
+Child	    Parent	             Allowed?   Keyword
+Interface	Interface	         Yes	    extends
+Interface	Multiple interfaces	 Yes	    extends
+Interface	Class	             No	        n/a
+Class	    Interface	         Yes	    implements
+Class	    Multiple interfaces	 Yes	    implements
+Class	    Class	             Yes	    extends
+Class	    Multiple classes	 No	        n/a
+______________________________________________________________________________________

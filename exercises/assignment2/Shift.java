@@ -17,7 +17,7 @@ public abstract class Shift {
         return task;
     }
 
-    // No body: every subclass must supply its own version
+    //Both are used as @override's in the different types of shifts
     public abstract int points();
     public abstract String ruleName();
 }

@@ -1,1 +1,9 @@
 Problem 2. Explain, in your own words, the concept of inheritance.
+
+Inheritance is about reusing and extending a class when making a new one.
+A subclass automatically gets the fields and methods of its superclass, but makes it possible to
+change or add new methods and fields. It develops an "Is-a" relationship where the subclass "is a..."
+"A car is a vehiclge"
+"A sock is a clothing"
+
+It shortens code by reusing, and makes a subclass to a subclass to a subclass readable.

@@ -1,3 +1,50 @@
+
 Problem 1. Explain, in your own words, the differences and similarities of
 interfaces, abstract classes, and classes
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+A Class is like a car, being its own thing, but you could also have a self-driving car, making that a subclass.
+No need for abstraction, since "car" is still its own thing.
+
+    Class Car
+    Class Self-Driving-Car extends Car
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+An abstract class is like making a "vehicle". Here we need to know if it is a car, a bike, a plane or something else.
+We need to abstract it here.
+
+    abstract class Vehicle { /* speed, abstract int getWheelCount() */ }
+    class Car extends Vehicle { ... }
+    class Bike extends Vehicle { ... }
+    class Plane extends Vehicle { ... }
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+An interface is used when a capability cuts across the hierarchy,
+meaning it applies to types that don’t share a common parent.
+Think about abilities that only some of them have:
+Refuelable:              a car and a plane can refuel, a bike can’t.
+Electric / Chargeable:   some cars and some bikes, but not a plane (for now).
+Flyable:                 a plane, but also a helicopter, and also things that aren’t vehicles at all, like a Bird or a Drone.
+
+    interface Refuelable { void refuel(double liters); }
+    interface Chargeable { void charge(int minutes); }
+
+    class Car extends Vehicle implements Refuelable { ... }
+    class ElectricBike extends Vehicle implements Chargeable { ... }
+    class HybridCar extends Vehicle implements Refuelable, Chargeable { ... }
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+_____________________________________________________________________________________________
+A class is a complete blueprint: it defines state (fields)
+and behavior (methods with bodies), and you can create objects from it directly.
+
+An abstract class is an incomplete blueprint.
+It captures what a family of related types has in common (shared state and shared behavior),
+but leaves some methods unimplemented because they only make sense for a concrete subtype.
+You can’t instantiate it.
+
+An interface is a pure contract: it says
+“any type that claims to be this must be able to do these things”
+without saying how, and (traditionally) without holding any state.
+_____________________________________________________________________________________________
 

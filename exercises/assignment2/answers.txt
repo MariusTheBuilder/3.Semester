@@ -1,13 +1,66 @@
 Assignment 2, answers
 
+_______________________________________________________________________________________________________________
 Question 1
+    FestivalVolunteers keeps Oskar in position 2 of three arrays.
+    Where does your program keep what it knows about Oskar, and how many objects for Oskar are there?
+---------------------------------------------------------------------------------------------------------------
+Answer:
+I create a new volunteer object in main when i write: "FestivalVolunteers vx = new FestivalVolunteers".
+There is only one object for oskar now, and when the program runs, he is created with his starting values.
+_______________________________________________________________________________________________________________
 
 
+
+_______________________________________________________________________________________________________________
 Question 2
+    Which methods in your design can change a volunteer's points, and from which class is each of them called?
+    Could Main.main give Oskar 100 points without a shift?
+---------------------------------------------------------------------------------------------------------------
+Answer:
+Good question - I just went and tried "v2.points += 51;" and it didn't work, because I had put "points" as private.
+When changing it to public, it worked and it displayed 59 points.
+
+Since it is private, only the class FestivalVolunteers could change it.
+But I thought it was really weird that I had to put the addShift into FestivalVolunteers. I thought it would go
+Into "Shift.java" but it doesn't work in there, and I couldn't make it work.
+
+If you made it this far, help? :)
+_______________________________________________________________________________________________________________
 
 
+
+_______________________________________________________________________________________________________________
 Question 3
+    How does your program work out the points of a bar shift and of a recycling shift?
+    Which method runs in each case, and how does Java choose it?
+---------------------------------------------------------------------------------------------------------------
+Answer:
+I just made the BarShift and the RecyclingShift subclasses of the Shift, so that the Barshift uses "getHours()"
+and the RecyclingShift uses "getHours() + bags"
+
+If I understand the question correctly, it either runs:
+v.addShift(new RecyclingShift) or v.addShift(new BarShift) - to differentiate between the two.
+It doesn't "choose" anything, we do. Right?
+_______________________________________________________________________________________________________________
 
 
+
+_______________________________________________________________________________________________________________
 Question 4
+    Which classes did the leader shift make you write or change, and why?
+    To add it to FestivalVolunteers.java instead,
+    which methods would you change, and would anything warn you if you forgot one?
+---------------------------------------------------------------------------------------------------------------
+Answer:
+I had to make the "leaderFestivals" as i had to make the "bags" in the RecyclingShift. The problem was that I
+couldn't access the festivals directly, since they were private. I only needed this one new class, and I did not
+change anything outside of it, since the shift just needed a space for the number to be pulled in to. It took
+me way too long to realise that I could use "getFestivals()" in main instead of trying to use it in the
+LeaderShift.
 
+To add it to FestivalVolunteers instead, I think I would have to add the whole Shift logic into the file, but I
+am not really sure.
+
+Perchance?
+_______________________________________________________________________________________________________________

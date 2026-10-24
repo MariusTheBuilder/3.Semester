@@ -19,7 +19,7 @@ package assignment2;
 public class FestivalVolunteers {
     // The volunteers, one position per person. 10 is enough for this festival.
     private String name;
-    private int festivals;   // festivals before this one
+    public int festivals;   // festivals before this one
     private int points;
 
     public FestivalVolunteers(String name, int festivals, int points) {
@@ -40,11 +40,10 @@ public class FestivalVolunteers {
         return festivals;
     }
 
-    //It apparently changes the volunteers points, so it belongs here.
     public void addShift(Shift shift) {
         points += shift.points();
-        System.out.println("  " + name + " worked " + shift.getHours() + " h, "
-                + shift.getTask() + ": " + shift.points()
+        System.out.println("  " + name + " worked " + shift.getHours()
+                + " h, " + shift.getTask() + ": " + shift.points()
                 + " points (" + shift.ruleName() + ")");
     }
 }

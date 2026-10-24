@@ -18,12 +18,10 @@ public class Main {
         FestivalVolunteers v2 = new FestivalVolunteers("Malik", 2, 0);
         FestivalVolunteers v3 = new FestivalVolunteers("Oskar", 0, 0);
 
-        FestivalVolunteers[] all = { v1, v2, v3 };
-
-        for (FestivalVolunteers v : all) {
-                System.out.println("  " + v.getName() + " has helped at " + v.getFestivals() + " festivals before");
-        }
-
+        System.out.println("  " + v1.getName() + " has helped at " + v1.getFestivals() + " festivals before");
+        System.out.println("  " + v2.getName() + " has helped at " + v2.getFestivals() + " festivals before");
+        System.out.println("  " + v3.getName() + " has helped at " + v3.getFestivals() + " festivals before");
+        System.out.println();
 
         // Task 2. Day 1, the bars. Exercise 2.
         // Read Task 2 in FestivalVolunteers.main, then write it here with your objects.
@@ -34,6 +32,12 @@ public class Main {
         v3.addShift(new BarShift(8, "Beer bar"));
         v3.addShift(new BarShift(8, "Coffee bar"));
 
+        System.out.print("  Points: " + v1.getName() + " " + v1.getPoints());
+        System.out.print(", " + v2.getName() + " " + v2.getPoints());
+        System.out.println(", " + v3.getName() + " " + v3.getPoints());
+        System.out.println();
+
+
         // Task 3. Day 2, cup recycling. Exercise 3.
         // Read Task 3 in FestivalVolunteers.main, then write it here with your objects.
         System.out.println("Task 3. Day 2, cup recycling");
@@ -42,11 +46,23 @@ public class Main {
         v2.addShift(new RecyclingShift(8, "Cup recycling", 6));
         v3.addShift(new RecyclingShift(8, "Cup recycling", 4));
 
+        System.out.print("  Points: " + v1.getName() + " " + v1.getPoints());
+        System.out.print(", " + v2.getName() + " " + v2.getPoints());
+        System.out.println(", " + v3.getName() + " " + v3.getPoints());
+        System.out.println();
+
 
         // Task 4. Day 3, the team leaders. Exercise 4.
         // FestivalVolunteers does not have this task. Exercise 4 in README.md describes it.
-    }
+        System.out.println("Task 4. Day 3, the team leaders");
 
+        v1.addShift(new LeaderShift(8, "Bar team leader", v1.getFestivals()));
+        v2.addShift(new LeaderShift(4, "Recycling team leader", v2.getFestivals()));
+
+        System.out.print("  Points: " + v1.getName() + " " + v1.getPoints());
+        System.out.print(", " + v2.getName() + " " + v2.getPoints());
+        System.out.println(", " + v3.getName() + " " + v3.getPoints());
+        System.out.println();
+    }
 }
 
-//I need to fix points and task 4
