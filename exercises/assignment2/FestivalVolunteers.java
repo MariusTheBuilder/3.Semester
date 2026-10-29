@@ -19,7 +19,7 @@ package assignment2;
 public class FestivalVolunteers {
     // The volunteers, one position per person. 10 is enough for this festival.
     private String name;
-    public int festivals;   // festivals before this one
+    private int festivals;   // festivals before this one
     private int points;
 
     public FestivalVolunteers(String name, int festivals, int points) {
