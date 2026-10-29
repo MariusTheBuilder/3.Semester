@@ -61,6 +61,15 @@ public class Demo {
             System.out.println("  " + person);
         }
 
+        PersonAlphabeticalOrder personAlphabeticalOrder = new PersonAlphabeticalOrder();
+        Collections.sort(people, personAlphabeticalOrder);   // exercise C
+
+        System.out.println();
+        System.out.println("The people:");
+        for (Person person : people) {
+            System.out.println("  " + person);
+        }
+
         // This line does not compile. Uncomment it and compile.
         // Comparator<Person> byName = new StringAlphabeticalOrder();
         // error: incompatible types: StringAlphabeticalOrder cannot be converted to Comparator<Person>
