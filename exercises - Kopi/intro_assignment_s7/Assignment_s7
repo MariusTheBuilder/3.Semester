@@ -1,0 +1,107 @@
+Problem 1. Write a class Box with a single type parameter T. A box
+contains exactly one element of type T (i.e. it should have a field of type
+T).
+Add an appropriate constructor. Add getter and setter methods. Ensure
+that the box can never contain the null value.
+
+
+Problem 2. Write a class Pair with two type parameters A and B to
+represent a pair of values (i.e. the class should have two fields of type A and
+B).
+Add an appropriate constructor and getter methods.
+Do not add any setters, as the class should be immutable.
+
+
+Problem 3. Add a method swap to the Pair class. The swap method
+should return a new pair where the first component becomes the second
+component and vice versa. For example, for the pair (true, 42) the method
+should return (42, true).
+(Hint: You will have to swap the type parameters in the return type.)
+
+
+Problem 4. Write a class Dict that takes two type parameters K and V.
+The class should represent a dictionary, i.e. a mapping from items of type K
+to items of type V. Internally, the dictionary should maintain a single array
+of pairs of type Pair<K,V>. The dictionary should support the operations:
+get(K key) and put(K key, V value). The get method takes a key argument, searches through the array for an element with that key, and returns
+its value. If the key is not present, it should return null. The put method
+updates the array with a new pair for the mapping from key to value.
+(Hint: If a pair with the key is already in the map it must be updated or
+removed.)
+
+
+Problem 5. Write a class, which takes one type parameter E, to represent
+a multiset. A multiset is a set that counts how many times it contains each
+of its elements. Add the following methods:
+• int count(E e) returns the number of times the element e occurs in
+the multiset.
+• void add(E e) adds the element e to the multiset. (Adding an element
+increments its count.)
+• void remove(E e) removes the element e from the multiset. (Removing an element decrements its count.)
+• int size() returns the number of different elements in the set, i.e. the
+number of non-duplicate elements.
+(Hint: Use an internal map of type Map<E, Integer>.)
+
+
+Problem 6. Write a class, which takes two type parameters: K and V, to
+represent a multimap. A multimap is a map from keys to sets of values. Add
+the following methods:
+• Set<V> get(K k) returns the set of values that k is mapped to. Returns the empty set if no mapping exists for k.
+• void put(K k, V v) adds the value v to the set of values k is mapped
+to.
+• Set<V> values() returns the set of all values in the multimap.
+(Hint: Use an internal map of type Map<K, Set<V>>.)
+
+
+Problem 7. Write a class, which takes two type parameters: A and B, to
+represent a bidirectional map. A bidirectional map is a one-to-one correspondence between two sets. Add the following methods:
+• B getForward(A a) returns the element that a is mapped to.
+• A getBackward(B b) returns the element that b is mapped to.
+• void put(A a, B b) creates a mapping between a and b (and b and
+a). If any mappings already exists for a or b they are removed.
+(Hint: Use two internal maps of type Map<A, B> and Map<B, A>.)
+
+
+Problem 8. Write a class Queue to represent a first-in first-out queue. The
+queue should take a type parameter T and store elements of type T in an
+array. A queue is like a check-out line in the super-market. You enter the
+queue, and eventually you are the one who has waited the longest, and then
+you exit the queue.
+The Queue should support the following operations:
+• void enqueue(T t) adds the element t to the back of the queue.
+• T dequeue() removes and returns the first element in the queue.
+• T drain(int n) removes the first n elements in the queue. Returns
+the last element removed. Does not throw an exception if the queue
+contains less than n elements, but drains the queue until it is empty
+and returns the element removed last.
+Hint:
+• Use an array of type T with fixed size. The size could be given as
+an argument to the constructor of Queue. Maintain two integer fields:
+current and next which are both indices pointing into the array. current should point to the oldest element and next should point to the
+next available index. Maintain these during enqueue and dequeue operations. When current goes beyond the size of the array, wrap around,
+and start from zero.
+
+
+Problem 9. Design and implement an object-oriented design of a university, its people and activities. This exercise is intended to be open-ended.
+Use your imagination!
+Here are some observations to get started:
+• A university is host to many people: students, faculty, and staff. Students could be bachelor, master, or even PhD students. Faculty include
+assistant professors, associate professors, full professors, etc. Staff include seasonal instructors, teaching assistants, and administrative personnel.
+• Students attend courses, participate in group work, go to exams, and
+get graded. Faculty arrange courses, including lectures, course material, exercises, hand-ins, and exams. Administrative personnel help
+plan student activities.
+Your design should pay particular attention to:
+• The relationship between entities, e.g. a course has a collection of students, but students also attend a collection of courses.
+• Appropriate constructors, getters, and setters.
+• Appropriate equals and hashCode methods. Not for every class, only
+where relevant.
+• Appropriate toString methods. Again, where relevant.
+• Add methods that perform useful computation. For example, retrieving
+all the students in a class, or all the homework of a particular student,
+or signing a student up for an exam, etc.
+• You are welcome to use inheritance, where appropriate, but the focus
+should be on the relations between entities. Ensure that you use appropriate collections, e.g. think about whether to use List, Set, or Map,
+etc.
+It is up to you to decide what aspect(s) to focus on. It could be how
+to model employees, students, homework, courses, exams, grades, or any
+combination you find interesting.

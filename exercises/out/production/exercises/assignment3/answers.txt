@@ -1,0 +1,12 @@
+Assignment 3, answers
+
+Question 1
+The code got way easier to read and had a better structure.
+I started out with a hashmap, but I could not make it work, so i tried an arrayList which i found out
+was way easier and flexible than I thought.
+
+Question 2
+
+
+Question 3
+

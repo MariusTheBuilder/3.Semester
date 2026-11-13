@@ -1,5 +1,7 @@
 package intro_assignment_s5.VendingMachine;
 
+// NOT ENTIRELY DONE
+
 public class VendingMachineTest {
     public static void main(String[] args) {
         System.out.println();

@@ -22,8 +22,9 @@ Good question - I just went and tried "v2.points += 51;" and it didn't work, bec
 When changing it to public, it worked and it displayed 59 points.
 
 Since it is private, only the class FestivalVolunteers could change it.
-But I thought it was really weird that I had to put the addShift into FestivalVolunteers. I thought it would go
-Into "Shift.java" but it doesn't work in there, and I couldn't make it work.
+But I thought it was really weird that I had to put the addShift into FestivalVolunteers for it to work.
+I thought it would go into "Shift.java" but it doesn't work in there, and I couldn't make it work.
+I must admit, I needed some outside help for this one when I couldn't make it work.
 
 If you made it this far, help? :)
 _______________________________________________________________________________________________________________
@@ -53,11 +54,12 @@ Question 4
     which methods would you change, and would anything warn you if you forgot one?
 ---------------------------------------------------------------------------------------------------------------
 Answer:
-I had to make the "leaderFestivals" as i had to make the "bags" in the RecyclingShift. The problem was that I
-couldn't access the festivals directly, since they were private. I only needed this one new class, and I did not
-change anything outside of it, since the shift just needed a space for the number to be pulled in to. It took
-me way too long to realise that I could use "getFestivals()" in main instead of trying to use it in the
-LeaderShift.
+I had to make an extra "empty" variable called "leaderFestivals" as I had to make the "bags" in the RecyclingShift.
+The problem was that I couldn't access the festivals directly, since they were private.
+I only needed this one new class, and I did not change anything outside of it, since the shift just needed a space
+for the number to be pulled in to.
+It took me way too long to realise that I could use "getFestivals()" in main instead of trying to use it in the
+LeaderShift. I found the trick on w3schools tbf.
 
 To add it to FestivalVolunteers instead, I think I would have to add the whole Shift logic into the file, but I
 am not really sure.

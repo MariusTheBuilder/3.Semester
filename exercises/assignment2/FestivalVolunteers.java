@@ -40,6 +40,18 @@ public class FestivalVolunteers {
         return festivals;
     }
 
+
+
+    public void printHistory() {
+        System.out.println("  " + name + " has helped at " + festivals + " festivals before");
+    }
+
+    public void printPoints() {
+        System.out.print(name + " " + points);
+    }
+
+
+
     public void addShift(Shift shift) {
         points += shift.points();
         System.out.println("  " + name + " worked " + shift.getHours()
