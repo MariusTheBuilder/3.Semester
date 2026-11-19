@@ -1,7 +1,5 @@
 package assignment3;
 
-import assignment3.Shift;
-
 public class BarShift extends Shift {
 
     public BarShift(int hours, String task) {

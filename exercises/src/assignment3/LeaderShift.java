@@ -1,7 +1,5 @@
 package assignment3;
 
-import assignment3.Shift;
-
 public class LeaderShift extends Shift {
     private int leaderFestivals;
 

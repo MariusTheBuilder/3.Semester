@@ -9,7 +9,7 @@ You do not add any new task. Your program still does tasks 1 to 4 and gives the 
 before. You only change how it is written.
 
 Each exercise tells you what to use, and you decide how to use it. At the end of each exercise
-there is a question about your choices. Write your answers in `assignment3/answers.txt`.
+there is a question about your choices. Write your answers in `answers.txt`.
 
 ## Getting started
 
@@ -22,7 +22,7 @@ do assignment 2, or part of it does not work, finish assignment 2 first. It is s
 
 1. Unzip `assignment3.zip` into the `src` folder of the course project, next to `assignment2`.
 2. Copy all your `.java` files from `assignment2` into `assignment3`, except
-   `FestivalVolunteers.java`. Check that each file starts with `package assignment3;`. Leave
+   `../src/assignment2/FestivalVolunteers.java`. Check that each file starts with `package assignment3;`. Leave
    `assignment2` as it is.
 3. In the `test` folder of the course project, create a package `assignment3`. Your tests go there.
 4. Run `Main.main` in `assignment3`. It should print the results of tasks 1 to 4, the same as in
@@ -46,7 +46,7 @@ volunteers in another order.
 - Try to do all your prints by overriding `toString` in your classes.
 
 Run `Main.main` after each change to check that tasks 1 to 4 still give the same results. Then
-answer question 1 in `answers.txt`.
+answer question 1 in `../src/assignment2/answers.txt`.
 
 ### Question 1
 
@@ -59,7 +59,7 @@ answer question 1 in `answers.txt`.
 - Write unit tests for them with JUnit, in the package `assignment3` that you created in `test`.
 - Run your tests every time you write a new one. When you hand in, all of them must pass.
 
-Then answer question 2 in `answers.txt`.
+Then answer question 2 in `../src/assignment2/answers.txt`.
 
 ### Question 2
 
@@ -76,7 +76,7 @@ Then answer question 2 in `answers.txt`.
   the exception is thrown.
 
 Check again that tasks 1 to 4 give the same results and that all your tests pass. Then answer
-question 3 in `answers.txt`.
+question 3 in `../src/assignment2/answers.txt`.
 
 ### Question 3
 
@@ -86,7 +86,7 @@ question 3 in `answers.txt`.
 ## What you hand in
 
 You hand in two zip files. `assignment3_src.zip` has your folder `assignment3` from `src`, with
-`answers.txt` inside. `assignment3_test.zip` has your folder `assignment3` from `test`. Everything
+`../src/assignment2/answers.txt` inside. `assignment3_test.zip` has your folder `assignment3` from `test`. Everything
 must compile, so if a test does not compile, delete it before you hand in. Three to five sentences
 per answer are enough, as long as you give your reasons.
 

@@ -1,7 +1,5 @@
 package assignment3;
 
-import assignment3.Shift;
-
 public class RecyclingShift extends Shift {
     private int bags;
 

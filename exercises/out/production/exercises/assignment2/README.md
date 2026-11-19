@@ -5,7 +5,7 @@
 At a music festival, volunteers work shifts and earn points. A volunteer with 30 points gets their
 festival ticket for free.
 
-`FestivalVolunteers.java` keeps the points of three volunteers. It works, but it is not
+`../assignment3/FestivalVolunteers.java` keeps the points of three volunteers. It works, but it is not
 object-oriented. It is written without objects, like the chess game of session 1. Its `main` does
 three tasks, and each task prints a result.
 
@@ -14,7 +14,7 @@ three tasks, and each task prints a result.
 3. Task 3 records the recycling shifts of the second day and prints the points.
 
 You write the same program again with objects, using classes and inheritance. You decide which
-classes you write and what each one does. Your program starts in `Main.java`, which is already in
+classes you write and what each one does. Your program starts in `../src/assignment1/Main.java`, which is already in
 the folder. Its `Main.main` is empty, with one comment for each task, and that is where your
 object-oriented version does the tasks, in the same order as `FestivalVolunteers.main`.
 
@@ -23,7 +23,7 @@ same. Your code is assessed on the quality of its object-oriented design, as the
 criteria below explain.
 
 Exercises 1, 2 and 3 rebuild one task each. Exercise 4 adds a fourth task that
-`FestivalVolunteers.java` does not have. Each exercise has two parts, the code you write and a
+`../assignment3/FestivalVolunteers.java` does not have. Each exercise has two parts, the code you write and a
 question about your design that you answer.
 
 ## Getting started
@@ -33,16 +33,16 @@ switched off. Hand in on Moodle by Sunday 25 October at 23:59.
 
 Unzip `assignment2.zip` into the `src` folder of the course project, next to `assignment1`. Run
 `FestivalVolunteers` and look at what each task prints. In `FestivalVolunteers.main`, each task
-starts with a comment, `Task 1`, `Task 2` and `Task 3`. Leave `FestivalVolunteers.java` as it is.
+starts with a comment, `Task 1`, `Task 2` and `Task 3`. Leave `../assignment3/FestivalVolunteers.java` as it is.
 
 Read all four exercises before you choose your classes. Write your classes in the folder
-`assignment2`, next to `Main.java`, and start each file with `package assignment2;`. Write your
-answers to the four questions in `assignment2/answers.txt`.
+`assignment2`, next to `../src/assignment1/Main.java`, and start each file with `package assignment2;`. Write your
+answers to the four questions in `../assignment3/answers.txt`.
 
 ## Assessment criteria
 
 Your code is assessed only on how well it follows the object-oriented concepts seen in the course.
-Your program must give the same results as `FestivalVolunteers.java`, with the same shifts and the
+Your program must give the same results as `../assignment3/FestivalVolunteers.java`, with the same shifts and the
 same points for every volunteer, but its lines do not have to look the same. That is required, but
 it is not enough. A program that gives the same results but is not object-oriented is not valid.
 
@@ -70,7 +70,7 @@ Task 1 adds the volunteers of the festival and lists them. Go to `Task 1` in
 1. Create the classes you think you need for this task. Then, under the comment `Task 1` in
    `Main.main`, write the code that does task 1 with objects of your classes. It gives the same
    results as task 1 of `FestivalVolunteers`.
-2. Answer question 1 in `answers.txt`, with your reasons.
+2. Answer question 1 in `../assignment3/answers.txt`, with your reasons.
 
 ### Question 1
 
@@ -86,7 +86,7 @@ does.
 1. Create the classes you think you need for this task, or add to the ones you already have.
    Then, under the comment `Task 2` in `Main.main`, write the code that does task 2 with objects of
    your classes. It gives the same results as task 2 of `FestivalVolunteers`.
-2. Answer question 2 in `answers.txt`, with your reasons.
+2. Answer question 2 in `../assignment3/answers.txt`, with your reasons.
 
 ### Question 2
 
@@ -102,7 +102,7 @@ its code and the methods it calls to see what it does.
 1. Create the classes you think you need for this task, or add to the ones you already have.
    Then, under the comment `Task 3` in `Main.main`, write the code that does task 3 with objects of
    your classes. It gives the same results as task 3 of `FestivalVolunteers`.
-2. Answer question 3 in `answers.txt`, with your reasons.
+2. Answer question 3 in `../assignment3/answers.txt`, with your reasons.
 
 ### Question 3
 
@@ -126,17 +126,17 @@ Task 4. Day 3, the team leaders
 1. Create the classes you think you need for this task, or add to the ones you already have.
    Then, under the comment `Task 4` in `Main.main`, write the code that does task 4 with objects of
    your classes.
-2. Answer question 4 in `answers.txt`, with your reasons.
+2. Answer question 4 in `../assignment3/answers.txt`, with your reasons.
 
 ### Question 4
 
 > Which classes did the leader shift make you write or change, and why? To add it to
-> `FestivalVolunteers.java` instead, which methods would you change, and would anything warn you
+> `../assignment3/FestivalVolunteers.java` instead, which methods would you change, and would anything warn you
 > if you forgot one?
 
 ## What you hand in
 
-A zip of your folder `assignment2`, with your classes, `Main.java` and `answers.txt`. The code must
+A zip of your folder `assignment2`, with your classes, `../src/assignment1/Main.java` and `../assignment3/answers.txt`. The code must
 compile. If task 4 does not work, leave it out of `Main.main`. Your answers are about the program
 you hand in, so read them again when you finish exercise 4. Three to five sentences per answer are
 enough.

@@ -28,7 +28,7 @@ public class Main {
         System.out.println();
 
 
-                // Task 2. Day 1, the bars. Exercise 2.
+        // Task 2. Day 1, the bars. Exercise 2.
         // Read Task 2 in FestivalVolunteers.main, then write it here with your objects.
         System.out.println("Task 2. Day 1, the bars");
 

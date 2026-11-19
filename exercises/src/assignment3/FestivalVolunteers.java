@@ -1,7 +1,5 @@
 package assignment3;
 
-import assignment3.Shift;
-
 /**
  * Assignment 2, the program you start from. Leave this file as it is.
  *

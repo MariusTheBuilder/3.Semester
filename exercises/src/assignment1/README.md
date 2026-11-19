@@ -8,7 +8,7 @@ Do it without AI assistance of any kind. IntelliJ's code generators, for example
 
 ## The program you start from
 
-Unzip `assignment1.zip` into the `src` folder of the course project, next to `session1` and `session2`. The new folder `assignment1` has `FlatShare.java`, the program you start from, and `expected-output.txt`, which is what your program must print when you are done. `EXERCISE.yml` tells AI assistants not to help with this assignment.
+Unzip `assignment1.zip` into the `src` folder of the course project, next to `session1` and `session2`. The new folder `assignment1` has `FlatShare.java`, the program you start from, and `expected-output.txt`, which is what your program must print when you are done. `../assignment2/EXERCISE.yml` tells AI assistants not to help with this assignment.
 
 `FlatShare.java` keeps the accounts of a shared flat, with no objects at all, like the chess game of session 1. Start with the comment at the top of the file. It explains how the arrays store the flatmates and what each type of expense does.
 
