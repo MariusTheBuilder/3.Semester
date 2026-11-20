@@ -54,14 +54,51 @@ public class Tests3 {
     public void checkLeader(){
         volunteers.get(0).addShift(new LeaderShift(8, "Bar team leader", volunteers.get(0).getFestivals()));
         volunteers.get(1).addShift(new LeaderShift(8, "Bar team leader", volunteers.get(1).getFestivals()));
-        volunteers.get(2).addShift(new LeaderShift(0, "Bar team leader", volunteers.get(2).getFestivals()));
 
         assertEquals(24, volunteers.get(0).getPoints());
         assertEquals(16, volunteers.get(1).getPoints());
-        assertEquals(0, volunteers.get(2).getPoints());
         assertNotEquals(1, volunteers.get(1).getPoints());
 
 
 
+        //After adding the InexperiencedLeaderException class.
+        try {
+            volunteers.get(2).addShift(new LeaderShift(8, "Bar team leader", volunteers.get(2).getFestivals()));
+        } catch (InexperiencedLeaderException e) {
+            System.out.println("Rejected: " + e.getMessage());
+        }
+    }
+
+    @Test
+    public void tooManyHoursThrows() {
+        assertThrows(IllegalArgumentException.class, () -> new BarShift(14, "Beer bar"));
+    }
+
+    @Test
+    public void notTooManyHoursThrows() {
+        BarShift barShift = new BarShift(13, "Beer bar");
+        assertDoesNotThrow(() -> barShift.getHours());
+    }
+
+    @Test
+    public void leaderWithNoFestivalsThrows() {
+        assertThrows(InexperiencedLeaderException.class,
+                () -> new LeaderShift(8, "Bar team leader", 0));
+    }
+
+    @Test
+    public void leaderWithOneFestivalIsAccepted() {
+        assertDoesNotThrow(() -> new LeaderShift(8, "Bar team leader", 1));
+    }
+
+    @Test
+    public void volunteerHasNoName() {
+        assertThrows(IllegalArgumentException.class, () -> new FestivalVolunteers("",13, 2));
+
+        try {
+            volunteers.add(new FestivalVolunteers("", 0, 0));
+        } catch (IllegalArgumentException e) {
+            System.out.println("Rejected: " + e.getMessage());
+        }
     }
 }

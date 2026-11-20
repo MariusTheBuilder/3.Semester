@@ -5,6 +5,10 @@ public class LeaderShift extends Shift {
 
     public LeaderShift(int hours, String task, int leaderFestivals) {
         super(hours, task);
+        if (leaderFestivals < 1) {
+            throw new InexperiencedLeaderException(
+                    "A team leader needs at least 1 festival as experience!, got: " + leaderFestivals + ".");
+        }
         this.leaderFestivals = leaderFestivals;
     }
 

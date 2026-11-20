@@ -53,7 +53,15 @@ public class Main {
         volunteers.get(1).addShift(new RecyclingShift(8, "Cup recycling", 6));
         volunteers.get(2).addShift(new RecyclingShift(8, "Cup recycling", 4));
 
-        System.out.print("  Points: ");
+        // Exception 1
+        try {
+                volunteers.get(2).addShift(new RecyclingShift(14, "Cup recycling", 4));
+        } catch (IllegalArgumentException e){
+                System.out.println("       Rejected: " + e.getMessage());
+        }
+
+
+                System.out.print("  Points: ");
         for (FestivalVolunteers v : volunteers) {
                 System.out.print(v);
         }

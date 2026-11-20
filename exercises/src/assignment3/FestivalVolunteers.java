@@ -23,6 +23,10 @@ public class FestivalVolunteers {
     private int points;
 
     public FestivalVolunteers(String name, int festivals, int points) {
+        if (name == null || name.isBlank()) {
+            throw new IllegalArgumentException("Volunteer name must not be blank");
+        }
+
         this.name = name;
         this.festivals = festivals;
         this.points = 0;

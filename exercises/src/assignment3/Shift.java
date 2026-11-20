@@ -5,6 +5,9 @@ public abstract class Shift {
     private String task;
 
     public Shift(int hours, String task) {
+        if (hours < 0 || hours > 13) {
+            throw new IllegalArgumentException("13 hours straight is the legal limit, got " + hours);
+        }
         this.hours = hours;
         this.task = task;
     }
